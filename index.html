@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Roshan Verma- Portfolio</title>
+    
+</head>
+<body>
+    <div class="landing-page">
+        <div class="profile">
+            <img src="./img/profile.jpg" alt="Your Name" class="profile-img">
+            <h1>Roshan Verma</h1>
+            <h2>Student at Illinois Tech</h2>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <ul class="nav-items">
+            <li><a href="#about" class="active">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="active">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Roshan, Information Technology professional with a strong background in web development, data structures, and IoT. Currently pursuing a Master's degree in Information Technology and Management at Illinois Institute of Technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="./img/social.jpg" alt="Project 1" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Social Distancing and Alert System</h3>
+                        <p class="project-description">A system built using image processing and ML which ensures adherence to social distancing and facemask protocols by analyzing real-time security camera video streams.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./img/BYS.jpg" alt="Project 2" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Book Your Slot</h3>
+                        <p class="project-description">An online token booking and management platform created with HTML, CSS, Javascript, PHP, and MySQL to prevent crowds of people at supermarkets during the Covid-19 outbreak.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./img/bus.jpg" alt="Project 3" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Bus Pass Renewal Using QR Code</h3>
+                        <p class="project-description">Android application for online bus pass generation developed utilizing Java and MS SQL. This system is intended to perform functionalities like accessing basic information for authentication and providing Bus passes for commuters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" onclick="alert('Thank you for your messege.')">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-items a');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                document.getElementById(targetId).classList.add('active');
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
